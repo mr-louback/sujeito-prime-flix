@@ -1,13 +1,8 @@
 import './App.css';
+import Routess from './routes';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       Header
-      </header>
-    </div>
-  );
+  return <Routess />
 }
 
 export default App;
