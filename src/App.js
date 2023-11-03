@@ -1,8 +1,12 @@
-import './App.css';
+import './index.css';
 import Routess from './routes';
 
 function App() {
-  return <Routess />
+  return (
+    <div className='.App'>
+      <Routess />
+    </div>
+  )
 }
 
 export default App;

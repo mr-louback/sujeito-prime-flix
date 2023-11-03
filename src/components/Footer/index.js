@@ -1,7 +1,8 @@
+import './style.css';
 function Footer({text}){
 
   return (
-    <div>
+    <div className="AppFooter">
       <h1>My {text} Component</h1>
     </div>
   )
