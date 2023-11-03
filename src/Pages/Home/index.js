@@ -4,6 +4,7 @@ import './style.css';
 import { Link } from 'react-router-dom';
 function Home() {
   const [films, setFilms] = useState([])
+  const [loading, setLoading] = useState(true)
   const apiKey = "83ec4b446f7ef33b231016fb87bf4279"
   useEffect(() => {
     async function loadFilms() {
@@ -18,10 +19,18 @@ function Home() {
       // const data = await response.json()
       setFilms(response.data.results.slice(0, 10))
       // console.log(response.data.results.slice(0, 10));
+      setLoading(false)
     }
     loadFilms()
   }
     , [])
+  if (loading) {
+    return (
+      <div className='loading'>
+        <h1>Carregando...</h1>
+      </div>
+    )
+  }
   return (
     <div className='AppHome'>
       <h1>Home</h1>
