@@ -1,16 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
+import Header from "./components/Header";
+// import About from "./Pages/About";
+// import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
+import Film from "./Pages/Film";
 function Routess() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/films/:id" element={<Film />} />
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
     </BrowserRouter>
   );
