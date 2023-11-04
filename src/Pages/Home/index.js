@@ -1,7 +1,8 @@
 import api from '../../services/api';
 import { useEffect, useState } from 'react';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
+import Loading from '../../components/Loading';
 function Home() {
   const [films, setFilms] = useState([])
   const [loading, setLoading] = useState(true)
@@ -25,26 +26,20 @@ function Home() {
   }
     , [])
   if (loading) {
-    return (
-      <div className='loading'>
-        <h1>Carregando...</h1>
-      </div>
-    )
+    return <Loading />
   }
   return (
-    <div className='AppHome'>
       <div className='listFilms'>
-      {films.map((film) => {
-        return (
-          <article key={film.id}>
-            <span>{film.title}</span>
-            <img src={`https://image.tmdb.org/t/p/w300${film.poster_path}`} alt={film.title} />
-            <Link to={`/films/${film.id}`}>Acessar</Link>
-          </article>
-        )
-      })}
+        {films.map((film) => {
+          return (
+            <article key={film.id}>
+              <span>{film.title}</span>
+              <img src={`https://image.tmdb.org/t/p/w300${film.poster_path}`} alt={film.title} />
+              <Link to={`/films/${film.id}`}>Acessar</Link>
+            </article>
+          )
+        })}
       </div>
-    </div>
   )
 }
 export default Home

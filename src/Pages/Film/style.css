@@ -1,37 +1,68 @@
-.film-info {
+.filmInfo {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  margin: 0 auto;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 1rem;
 }
 
-.film-info h1 {
+.filmInfo h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
+
   text-align: center;
 }
 
-.film-info h3 {
+.filmInfo h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
   text-align: center;
 }
 
-.film-info img {
+.filmInfo img {
   width: 100%;
   height: 100%;
-  max-width: 400px;
-  max-height: 400px;
+  
   margin-bottom: 1rem;
   border-radius: 10px;
 }
 
-.film-info span {
+.filmInfo span {
   font-size: 1rem;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
+
   text-align: center;
   padding: 30px;
+}
+
+.areaButton {
+  margin-top: 1rem;
+  
+}
+
+.areaButton button {
+  margin: 0 1rem;
+  padding: 10px 20px;
+  border: none;
+  background-color: #116feb;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all .5s;
+  margin-bottom: 10px;
+
+}
+.areaButton a {
+  text-decoration: none;
+  color: #fff;
+}
+.areaButton button:hover{
+  background-color: #0d5cb6;
 }
