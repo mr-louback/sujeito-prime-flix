@@ -23,7 +23,6 @@ function Film() {
           setloading(false);
         })
         .catch(() => {
-          // console.log('error filme nao encontrado');
           navigate('/', {
             replace: true
           });
@@ -35,6 +34,18 @@ function Film() {
       console.log('componente desmontado');
     });
   }, [id,navigate]);
+  function saveMovie(){
+    const myList = localStorage.getItem('myList');
+    let saveList = JSON.parse(myList) || [];
+    const hasMovie = saveList.some((item) => item.id === films.id);
+    if(hasMovie){
+      alert('Filme já adicionado');
+      return;
+    }
+    saveList.push(films);
+    localStorage.setItem('myList',JSON.stringify(saveList));
+    alert('Filme adicionado com sucesso');
+  }
   if (loading) {
     return <Loading/>
   }
@@ -46,7 +57,7 @@ function Film() {
       <span>{films.overview}</span>
       <strong>Avaliação: {Math.floor(films.vote_average)} de 10</strong>
       <div className='areaButton'>
-        <button className='button'>Adicionar a lista</button>
+        <button onClick={saveMovie} className='button'>Adicionar a lista</button>
         <button className='button'>
           <a href={`https://www.youtube.com/results?search_query=${films.title}+trailer`} target='blank' rel='noreferrer external noopener'>Trailer</a>
         </button>
