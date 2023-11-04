@@ -5,7 +5,7 @@ function Error() {
       <h1 className='errorH1'>Erro 404</h1>
 
       <span>
-        Not Found
+       Página não encontrada!
       </span>
     </div>
   )

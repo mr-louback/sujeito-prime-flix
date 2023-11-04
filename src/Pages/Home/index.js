@@ -33,7 +33,6 @@ function Home() {
   }
   return (
     <div className='AppHome'>
-      <h1>Home</h1>
       <div className='listFilms'>
       {films.map((film) => {
         return (
