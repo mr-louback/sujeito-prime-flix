@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import './style.css'
 import { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 function Favorites() {
   const [favorites, setFavorites] = useState([])
   useEffect(() => {
@@ -15,6 +16,7 @@ function Favorites() {
     })
     setFavorites(filterMovie)
     localStorage.setItem('myList', JSON.stringify(filterMovie))
+    toast.success('Filme removido com sucesso')
   }
   return (
     <div className="filmsFavorites">

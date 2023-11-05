@@ -3,6 +3,8 @@ import api from '../../services/api';
 import { useEffect, useState } from 'react';
 import './style.css';
 import Loading from "../../components/Loading";
+import 'react-toastify/dist/ReactToastify.css';
+import {toast } from 'react-toastify';
 
 function Film() {
   const { id } = useParams();
@@ -39,12 +41,12 @@ function Film() {
     let saveList = JSON.parse(myList) || [];
     const hasMovie = saveList.some((item) => item.id === films.id);
     if(hasMovie){
-      alert('Filme já adicionado');
+     toast.warn('Filme já adicionado');
       return;
     }
     saveList.push(films);
     localStorage.setItem('myList',JSON.stringify(saveList));
-    alert('Filme adicionado com sucesso');
+    toast.success('Filme adicionado com sucesso');
   }
   if (loading) {
     return <Loading/>
