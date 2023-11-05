@@ -1,0 +1,39 @@
+.filmsFavorites {
+  margin-top: 24px;
+
+}
+
+.filmsFavorites h1 {
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.filmsFavorites ul {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.filmsFavorites span {
+  font-size: 18px;
+}
+
+.filmsFavorites ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.filmsFavorites div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filmsFavorites div a {
+  margin-right: 14px;
+  color: #116feb;
+  text-decoration: none;
+}
